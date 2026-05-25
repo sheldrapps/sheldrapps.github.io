@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sheldrapps — Independent Software Tools</title>
+    <meta
+      name="description"
+      content="Sheldrapps creates simple mobile tools for readers, creators, books, covers, files, and everyday digital workflows."
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="google-site-verification" content="p4yr_uDtZzd7L9-wW0hC2Z9KobeMQSS9LLPPD8QVnLc" />
+    <meta property="og:title" content="Sheldrapps" />
+    <meta
+      property="og:description"
+      content="Independent software tools for readers, creators, and everyday users."
+    />
+    <meta property="og:type" content="website" />
+    <style>
+      :root {
+        --bg: #f3f7fa;
+        --surface: #ffffff;
+        --surface-soft: #f7fbfd;
+        --text: #132433;
+        --muted: #4d6374;
+        --line: #d7e4ee;
+        --brand: #0f7f95;
+        --brand-strong: #0c687a;
+        --shadow: 0 10px 26px rgba(19, 36, 51, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+        color: var(--text);
+        line-height: 1.55;
+        background:
+          radial-gradient(1200px 500px at 12% -10%, #d8eef4 0%, transparent 60%),
+          radial-gradient(900px 500px at 95% -20%, #e8f4e9 0%, transparent 58%),
+          var(--bg);
+      }
+
+      a {
+        color: var(--brand-strong);
+      }
+
+      a:hover {
+        color: var(--brand);
+      }
+
+      .container {
+        width: min(100% - 32px, 1100px);
+        margin: 0 auto;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        border-bottom: 1px solid rgba(215, 228, 238, 0.9);
+        background: rgba(243, 247, 250, 0.93);
+        backdrop-filter: blur(6px);
+      }
+
+      .site-header .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.9rem 0;
+        gap: 1rem;
+      }
+
+      .brand {
+        font-weight: 700;
+        text-decoration: none;
+        color: var(--text);
+        letter-spacing: 0.2px;
+      }
+
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+
+      .nav a {
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      main {
+        padding: 2rem 0 3rem;
+      }
+
+      section {
+        margin-top: 1.5rem;
+      }
+
+      .hero {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: clamp(1.5rem, 4vw, 3.25rem);
+        box-shadow: var(--shadow);
+      }
+
+      .eyebrow {
+        margin: 0;
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--brand-strong);
+      }
+
+      h1,
+      h2,
+      h3 {
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+      }
+
+      h1 {
+        margin: 0.5rem 0 0;
+        font-size: clamp(1.95rem, 4vw, 3rem);
+      }
+
+      .hero .tagline {
+        margin: 0.9rem 0 0;
+        font-size: clamp(1rem, 2vw, 1.3rem);
+        color: var(--muted);
+      }
+
+      .hero .description {
+        margin: 1rem 0 0;
+        max-width: 62ch;
+      }
+
+      .actions {
+        margin-top: 1.45rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        border-radius: 999px;
+        padding: 0.7rem 1.15rem;
+        font-weight: 600;
+        border: 1px solid transparent;
+      }
+
+      .btn-primary {
+        background: var(--brand);
+        color: #fff;
+      }
+
+      .btn-primary:hover {
+        background: var(--brand-strong);
+        color: #fff;
+      }
+
+      .btn-secondary {
+        border-color: var(--line);
+        background: var(--surface-soft);
+        color: var(--text);
+      }
+
+      .section-head {
+        margin: 0 0 0.9rem;
+        font-size: clamp(1.4rem, 2.4vw, 2rem);
+      }
+
+      .section-intro {
+        margin: 0 0 1.2rem;
+        color: var(--muted);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+        gap: 1rem;
+      }
+
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 1rem;
+        box-shadow: var(--shadow);
+      }
+
+      .card h3 {
+        margin: 0;
+        font-size: 1.1rem;
+      }
+
+      .app-head {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .app-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 12px;
+        object-fit: cover;
+        border: 1px solid var(--line);
+        background: #e9f1f6;
+        flex: 0 0 auto;
+      }
+
+      .card p {
+        margin: 0.7rem 0 0;
+      }
+
+      .links {
+        margin-top: 0.95rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+
+      .links a {
+        font-weight: 600;
+      }
+
+      .support,
+      .legal {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 1.2rem;
+        box-shadow: var(--shadow);
+      }
+
+      .support p,
+      .legal p,
+      .legal ul {
+        margin: 0.7rem 0 0;
+      }
+
+      .legal ul {
+        padding-left: 1.2rem;
+      }
+
+      footer {
+        border-top: 1px solid var(--line);
+        margin-top: 2rem;
+      }
+
+      footer .container {
+        padding: 1.2rem 0 2rem;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: 700px) {
+        .site-header .container {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .nav {
+          gap: 0.7rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header / Navigation -->
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="#home">Sheldrapps</a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#apps">Apps</a>
+          <a href="#support">Support</a>
+          <a href="#legal">Legal</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- Hero -->
+      <section id="home" class="hero" aria-labelledby="home-title">
+        <p class="eyebrow">INDEPENDENT SOFTWARE STUDIO</p>
+        <h1 id="home-title">Sheldrapps</h1>
+        <p class="tagline">Independent software for readers, creators, and everyday users.</p>
+        <p class="description">
+          Sheldrapps creates simple mobile tools for books, covers, files, and practical digital workflows.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#apps">View apps</a>
+          <a class="btn btn-secondary" href="#support">Contact support</a>
+        </div>
+      </section>
+
+      <!-- Apps -->
+      <section id="apps" aria-labelledby="apps-title">
+        <h2 id="apps-title" class="section-head">Available apps</h2>
+        <p class="section-intro">
+          Lightweight tools designed for practical reading and cover workflows.
+        </p>
+        <div class="grid">
+          <article class="card">
+            <div class="app-head">
+              <img
+                class="app-icon"
+                src="./resources/ecc_icon_512.png"
+                alt="EPUB Cover Changer app icon"
+                width="52"
+                height="52"
+              />
+              <h3>EPUB Cover Changer</h3>
+            </div>
+            <p>Change EPUB covers quickly and keep your digital library looking clean.</p>
+            <div class="links">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.sheldrapps.epubcoverchanger&amp;hl=es_MX"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Google Play
+              </a>
+              <a href="./epub-cover-changer/index.html">Privacy Policy</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="app-head">
+              <img
+                class="app-icon"
+                src="./resources/ccfk_icon.png"
+                alt="Cover Creator for E-Reader app icon"
+                width="52"
+                height="52"
+              />
+              <h3>Cover Creator for E-Reader</h3>
+            </div>
+            <p>Create custom covers for your Kindle and e-reader screens.</p>
+            <div class="links">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.sheldrapps.covercreatorforkindle&amp;hl=es_MX"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Google Play
+              </a>
+              <a href="./cover-creator-for-kindle/index.html">Privacy Policy</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>More tools coming soon</h3>
+            <p>
+              More focused utilities for readers, creators, and practical digital workflows are on the way.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Support -->
+      <section id="support" class="support" aria-labelledby="support-title">
+        <h2 id="support-title" class="section-head">Support</h2>
+        <p>Need help with one of our apps?</p>
+        <p>For app support, questions, or issue reports, contact us by email.</p>
+        <p>
+          <a href="mailto:sheldrapps@gmail.com">sheldrapps@gmail.com</a>
+        </p>
+        <p>
+          Sheldrapps provides digital products and online support. We do not operate as a physical storefront.
+        </p>
+      </section>
+
+      <!-- Legal -->
+      <section id="legal" class="legal" aria-labelledby="legal-title">
+        <h2 id="legal-title" class="section-head">Legal</h2>
+        <p>Privacy policies for current Sheldrapps apps:</p>
+        <ul>
+          <li><a href="./epub-cover-changer/index.html">EPUB Cover Changer Privacy Policy</a></li>
+          <li><a href="./cover-creator-for-kindle/index.html">Cover Creator for E-Reader Privacy Policy</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">© 2026 Sheldrapps. All rights reserved.</div>
+    </footer>
+  </body>
+</html>
